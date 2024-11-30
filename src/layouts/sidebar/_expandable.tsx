@@ -17,7 +17,7 @@ import { useClickAway } from '@/lib/hooks/use-click-away';
 import { defaultMenuItems } from '@/layouts/sidebar/_menu-items';
 import routes from '@/config/routes';
 //images
-import AuthorImage from '@/assets/images/author.jpg';
+import AuthorImage from '@/assets/images/brahma101.gif';
 import { LAYOUT_OPTIONS } from '@/lib/constants';
 
 const layoutOption = '';
@@ -169,7 +169,7 @@ export default function Sidebar({ className }: { className?: string }) {
             >
               <AuthorCard
                 image={AuthorImage}
-                name="Cameron Williamson"
+                name="brahma101.eth"
                 role="admin"
               />
             </motion.div>

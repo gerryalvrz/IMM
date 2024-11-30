@@ -1,15 +1,15 @@
 //images
-import BitcoinImage from '@/assets/images/coin/bitcoin.svg';
-import TetherImage from '@/assets/images/coin/tether.svg';
-import CardanoImage from '@/assets/images/coin/cardano.svg';
-import BinanceImage from '@/assets/images/coin/binance.svg';
+import BitcoinImage from '@/assets/images/coin/celo-celo-logo.svg';
+import TetherImage from '@/assets/images/coin/cmxp.png';
+import CardanoImage from '@/assets/images/coin/cmx.png';
+import BinanceImage from '@/assets/images/coin/celo dolar.png';
 
 export const coinSlideData = [
   {
     id: '0',
-    name: 'Bitcoin',
-    symbol: 'BTC',
-    balance: '0.2231345',
+    name: 'Celo',
+    symbol: '$CELO',
+    balance: '17,890',
     usdBalance: '11,032.24',
     logo: BitcoinImage,
     change: '+12.5%',
@@ -18,10 +18,10 @@ export const coinSlideData = [
   },
   {
     id: '1',
-    name: 'Tether',
-    symbol: 'USDT',
-    balance: '1.2345',
-    usdBalance: '1,032.24',
+    name: 'Celo Mexican Peso',
+    symbol: 'cMxP',
+    balance: '10,239',
+    usdBalance: '532.24',
     logo: TetherImage,
     change: '-1.5%',
     isChangePositive: false,
@@ -29,24 +29,24 @@ export const coinSlideData = [
   },
   {
     id: '2',
-    name: 'Cardano',
-    symbol: 'ADA',
-    balance: '1.2370',
-    usdBalance: '532.94',
+    name: 'CeloMexico Token',
+    symbol: 'CmxT',
+    balance: '32,202',
+    usdBalance: '632.94',
     logo: CardanoImage,
     change: '+12.5%',
     isChangePositive: true,
-    color: '#DBE3FF',
+    color: '#FBF5D5',
   },
   {
     id: '3',
-    name: 'Binance',
-    symbol: 'BUSD',
+    name: 'Celo Dolar',
+    symbol: 'cUSD',
     balance: '240.55',
-    usdBalance: '340.24',
+    usdBalance: '240.24',
     logo: BinanceImage,
     change: '+1.5%',
     isChangePositive: true,
-    color: '#FBF5D5',
+    color: '#E1F9F1',
   },
 ];

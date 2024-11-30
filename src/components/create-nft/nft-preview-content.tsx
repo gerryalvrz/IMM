@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from '@/components/ui/image';
-import AuthorImage from '@/assets/images/author.jpg';
+import AuthorImage from '@/assets/images/brahma101.gif';
 import NFT1 from '@/assets/images/nft/nft-1.jpg';
 import Avatar from '@/components/ui/avatar';
 
@@ -12,10 +12,10 @@ export default function PreviewContent() {
           <Avatar
             size="sm"
             image={AuthorImage}
-            alt="Cameronwilliamson"
+            alt="brahma101.eth"
             className="border-white bg-gray-300 ltr:mr-3 rtl:ml-3 dark:bg-gray-400"
           />
-          @Cameronwilliamson
+          @brahma101.eth
         </div>
         <div className="relative block w-full">
           <Image

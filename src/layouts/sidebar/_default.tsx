@@ -11,7 +11,7 @@ import { Close } from '@/components/icons/close';
 import { defaultMenuItems } from '@/layouts/sidebar/_menu-items';
 import { LAYOUT_OPTIONS } from '@/lib/constants';
 //images
-import AuthorImage from '@/assets/images/author.jpg';
+import AuthorImage from '@/assets/images/brahma101.gif';
 import React from 'react';
 
 interface SidebarProps {
@@ -73,7 +73,7 @@ export default function Sidebar({
         <div className="px-6 pb-5 2xl:px-8">
           <AuthorCard
             image={AuthorImage}
-            name="Cameron Williamson"
+            name="brahma101.eth"
             role="admin"
           />
 

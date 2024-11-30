@@ -51,7 +51,7 @@ export const TopCurrencyData = [
   },
   {
     id: 3,
-    coin: { icon: <Tether />, symbol: 'USDT', name: 'Tether USD' },
+    coin: { icon: <Tether />, symbol: 'cUSD', name: 'Celo USD' },
     prices: [
       { name: 1, value: 12187.44 },
       { name: 2, value: 21356.99 },
@@ -70,7 +70,7 @@ export const TopCurrencyData = [
   },
   {
     id: 4,
-    coin: { icon: <Bnb />, symbol: 'BNB', name: 'Binance Coin' },
+    coin: { icon: <Bnb />, symbol: 'CELO', name: 'Celo' },
     prices: [
       { name: 1, value: 15187.44 },
       { name: 2, value: 16356.99 },

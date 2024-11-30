@@ -1,5 +1,5 @@
 import CoverImage from '@/assets/images/profile-cover.jpg';
-import AuthorImage from '@/assets/images/author.jpg';
+import AuthorImage from '@/assets/images/brahma101.gif';
 import { Instagram } from '@/components/icons/brands/instagram';
 import { Twitter } from '@/components/icons/brands/twitter';
 import { Facebook } from '@/components/icons/brands/facebook';
@@ -11,11 +11,11 @@ import User5 from '@/assets/images/avatar/6.png';
 
 export const authorData = {
   id: 157896,
-  name: 'Spy Thirtythree',
-  user_name: 'Cameronwilliamson',
+  name: 'GerryALV',
+  user_name: 'brahma101.eth',
   wallet_key:
     '0x9Af568442868356c7aE834A47614600002545476555555555772d9F5B87e9b',
-  created_at: 'November 2021',
+  created_at: 'November 2024',
   cover_image: {
     id: 1,
     thumbnail: CoverImage,
@@ -32,8 +32,8 @@ export const authorData = {
   followed_by: [
     {
       id: 1,
-      name: 'Thirtythree',
-      slug: 'thirtythree',
+      name: 'brahma101.eth',
+      slug: 'brahma101.eth',
       avatar: {
         id: 1,
         thumbnail: User1,
@@ -42,8 +42,8 @@ export const authorData = {
     },
     {
       id: 2,
-      name: 'Thirtythree',
-      slug: 'thirtythree',
+      name: 'brahma101.eth',
+      slug: 'brahma101.eth',
       avatar: {
         id: 1,
         thumbnail: User2,
@@ -52,8 +52,8 @@ export const authorData = {
     },
     {
       id: 3,
-      name: 'Thirtythree',
-      slug: 'thirtythree',
+      name: 'brahma101.eth',
+      slug: 'brahma101.eth',
       avatar: {
         id: 1,
         thumbnail: User3,
@@ -62,8 +62,8 @@ export const authorData = {
     },
     {
       id: 4,
-      name: 'Thirtythree',
-      slug: 'thirtythree',
+      name: 'brahma101.eth',
+      slug: 'brahma101.eth',
       avatar: {
         id: 1,
         thumbnail: User4,
@@ -72,8 +72,8 @@ export const authorData = {
     },
     {
       id: 5,
-      name: 'Thirtythree',
-      slug: 'thirtythree',
+      name: 'brahma101.eth',
+      slug: 'brahma101.eth',
       avatar: {
         id: 1,
         thumbnail: User5,

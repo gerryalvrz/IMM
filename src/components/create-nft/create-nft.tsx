@@ -19,7 +19,7 @@ import Avatar from '@/components/ui/avatar';
 import Preview from '@/components/create-nft/nft-preview';
 
 //images
-import AuthorImage from '@/assets/images/author.jpg';
+import AuthorImage from '@/assets/images/brahma101.gif';
 import NFT1 from '@/assets/images/nft/nft-1.jpg';
 import PriceType from '@/components/create-nft/price-types-props';
 import FileInput from '@/components/ui/file-input';
@@ -103,10 +103,10 @@ export default function CreateNFT() {
                 <Avatar
                   size="sm"
                   image={AuthorImage}
-                  alt="Cameronwilliamson"
+                  alt="brahma101.eth"
                   className="border-white bg-gray-300 ltr:mr-3 rtl:ml-3 dark:bg-gray-400"
                 />
-                @Cameronwilliamson
+                @brahma101.eth
               </div>
               <div className="relative block w-full">
                 <Image

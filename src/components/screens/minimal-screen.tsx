@@ -13,7 +13,7 @@ import { priceFeedData } from '@/data/static/price-feed';
 import { useBreakpoint } from '@/lib/hooks/use-breakpoint';
 
 //images
-import AuthorImage from '@/assets/images/author.jpg';
+import AuthorImage from '@/assets/images/brahma101.gif';
 
 const topPoolsLimit = (breakpoint: string) => {
   switch (breakpoint) {

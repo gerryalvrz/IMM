@@ -11,7 +11,7 @@ import { useDrawer } from '@/components/drawer-views/context';
 import { Close } from '@/components/icons/close';
 import { defaultMenuItems } from '@/layouts/sidebar/_menu-items';
 //images
-import AuthorImage from '@/assets/images/author.jpg';
+import AuthorImage from '@/assets/images/brahma101.gif';
 import ShapeImage from '@/assets/images/sidebar-shape.png';
 import { LAYOUT_OPTIONS } from '@/lib/constants';
 
@@ -61,7 +61,7 @@ export default function Sidebar({ className }: { className?: string }) {
         <div className="px-6 pb-5 2xl:px-8">
           <AuthorCard
             image={AuthorImage}
-            name="Cameron Williamson"
+            name="Brahma101.eth"
             role="admin"
           />
 

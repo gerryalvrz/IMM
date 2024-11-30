@@ -7,7 +7,7 @@ import TopupButton from '@/components/ui/topup-button';
 import TransactCoin from '@/components/ui/transact-coin';
 import WalletCard from '@/components/ui/wallet-card-two';
 //images
-import AuthorImage from '@/assets/images/author.jpg';
+import AuthorImage from '@/assets/images/brahma101.gif';
 
 export default function Sidebar({ className }: { className?: string }) {
   return (

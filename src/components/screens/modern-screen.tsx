@@ -13,7 +13,7 @@ import TopCurrencyTable from '@/components/top-currency/currency-table';
 import TransactionTable from '@/components/transaction/transaction-table';
 
 //images
-import AuthorImage from '@/assets/images/author.jpg';
+import AuthorImage from '@/assets/images/brahma101.gif';
 
 export default function ModernScreen() {
   return (
