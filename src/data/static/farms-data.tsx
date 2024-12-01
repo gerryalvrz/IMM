@@ -10,8 +10,8 @@ export const FarmsData = [
   },
   {
     id: 2,
-    from: 'USDT',
-    to: 'BNB',
+    from: 'cMXP',
+    to: 'celo',
     earned: '0',
     apr: '25.20%',
     liquidity: '$132,941,720',

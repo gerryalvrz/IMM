@@ -14,15 +14,15 @@ export const walletCurrencies = [
   },
   {
     icon: <Tether />,
-    name: 'Tether USD',
+    name: 'Celo Dolar',
     code: 'USDT',
     volume: '-8.47%',
     color: '#259C77',
     isChangePositive: false,
   },
   {
-    icon: <Cardano />,
-    name: 'Cardano',
+    icon: <Tether />,
+    name: 'Celo MxP',
     code: 'ADA',
     volume: '+5.63%',
     color: '#3468D1',
@@ -30,7 +30,7 @@ export const walletCurrencies = [
   },
   {
     icon: <Bnb />,
-    name: 'Binance Coin',
+    name: 'Celo',
     code: 'BNB',
     volume: '-3.02%',
     color: '#F3BA2F',

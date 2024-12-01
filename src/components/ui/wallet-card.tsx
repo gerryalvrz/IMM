@@ -25,7 +25,7 @@ const data = [
     isChangePositive: true,
   },
   {
-    name: 'Binance Coin',
+    name: 'Celo',
     value: 15,
     volume: '-3.02%',
     isChangePositive: false,

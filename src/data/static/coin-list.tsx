@@ -28,7 +28,7 @@ export const coinList = [
   {
     icon: <Bnb />,
     code: 'BNB',
-    name: 'Binance Coin',
+    name: 'Celo',
     price: 338.36,
   },
   {

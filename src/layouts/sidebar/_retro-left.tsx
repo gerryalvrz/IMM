@@ -81,7 +81,7 @@ export default function Sidebar({ className }: { className?: string }) {
               <Image src={ShapeImage} alt="Shape image" width={200} />
             </div>
             <h2 className="mb-7 mt-5 text-center text-[20px] font-semibold leading-8 text-light-dark dark:text-white">
-              Explore the new Blockchain System
+              The Impact Market Maker
             </h2>
             <button className="h-12 rounded-lg bg-brand text-white">
               Try Now{' '}

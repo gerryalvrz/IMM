@@ -283,7 +283,7 @@ export const CoinMarketData = [
   },
   {
     id: 4,
-    coin: { icon: <Bnb />, symbol: 'BNB', name: 'Binance Coin' },
+    coin: { icon: <Bnb />, symbol: 'BNB', name: 'Celo' },
     prices: 218.56,
     plus_depth: 2405540.02,
     minus_depth: 2405540.02,

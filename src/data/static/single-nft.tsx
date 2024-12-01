@@ -11,19 +11,19 @@ import Avatar6 from '@/assets/images/avatar/6.png';
 
 export const nftData = {
   isAuction: true,
-  name: 'Flow Punk Gallery #303',
+  name: 'Agricultura Regenerativa #303',
   image: SingleNft,
   minted_date: 'Jan 26, 2022',
   minted_slug: 'https://etherscan.io/',
   price: 0.2,
   description:
-    'Fisherian Runaways, Child of #48 Bat Veil & #42 Screw Nose. This mushroom is the result of the cross-breeding of two original one of a kind generative mushrooms donated back to the Fisherian Runaways project their generous owner.',
-  creator: { id: 1, logo: Avatar1, name: '@Cameronwilliamson', slug: '#' },
-  collection: { id: 1, logo: Avatar3, name: 'Criptic', slug: '#' },
-  owner: { id: 1, logo: Avatar4, name: '@williamson', slug: '#' },
+    'La comunidad del Huerto Comunitario La Milpa tiene un interés principal: producir y cosechar verduras y frutas en su huerto comunitario en Tepoztlán, Morelos, México. Hemos estado dedicados a la horticultura durante más de 18 años, y este proyecto comunitario es, con diferencia, el proyecto más emocionante que hemos realizado. Somos Rogelio Mandujano y Nievska Huerta, los planificadores, desarrolladores y líderes de este maravilloso proyecto. Somos aproximadamente 20 familias, parejas o individuos que buscan aprender a plantar y cosechar nuestras propias verduras y frutas, siendo estas 100% orgánicas, en 2500 metros cuadrados de tierra hermosa. Nievska Huerta y Rogelio Mandujano.',
+  creator: { id: 1, logo: Avatar1, name: '@HuertoLaMilpa', slug: '#' },
+  collection: { id: 1, logo: Avatar3, name: 'ImpactMarketMaker', slug: '#' },
+  owner: { id: 1, logo: Avatar1, name: '@HuertoLaMilpa', slug: '#' },
   block_chains: [
-    { id: 1, logo: Bitcoin, name: 'Ethereum', slug: '#' },
-    { id: 2, logo: Ethereum, name: 'Bitcoin', slug: '#' },
+    { id: 1, logo: Bitcoin, name: 'Celo', slug: '#' },
+    { id: 2, logo: Ethereum, name: 'Ethereum', slug: '#' },
   ],
   bids: [
     {
@@ -49,7 +49,7 @@ export const nftData = {
     {
       id: 3,
       label: 'Bid Placed',
-      name: 'Williamson',
+      name: 'ReFi Mexico',
       authorSlug: '#',
       created_at: '2022-03-22T17:26:22.000000Z',
       avatar: Avatar3,
@@ -79,7 +79,7 @@ export const nftData = {
     {
       id: 6,
       label: 'Bid Placed',
-      name: 'Williamson',
+      name: 'ReFiMexico',
       authorSlug: '#',
       created_at: '2022-03-22T17:26:22.000000Z',
       avatar: Avatar6,

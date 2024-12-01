@@ -11,16 +11,16 @@ import { Cardano } from '@/components/icons/cardano';
 export const priceFeedData = [
   {
     id: '0',
-    name: 'Bitcoin',
-    symbol: 'BTC',
-    balance: '0.2231345',
+    name: 'Celo',
+    symbol: 'CELO',
+    balance: '18,335',
     usdBalance: '11,032.24',
     logo: BitcoinImage,
     change: '+12.5%',
     isChangePositive: true,
     isBorder: false,
     color: '#FDEDD4',
-    icon: <Bitcoin />,
+    icon: <Bnb />,
     prices: [
       { name: 1, value: 15187.44 },
       { name: 2, value: 21356.99 },
@@ -35,8 +35,8 @@ export const priceFeedData = [
   },
   {
     id: '1',
-    name: 'Tether',
-    symbol: 'USDT',
+    name: 'Celo MxP',
+    symbol: 'cmxp',
     balance: '1.2345',
     usdBalance: '1,032.24',
     logo: TetherImage,
