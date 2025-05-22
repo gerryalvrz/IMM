@@ -8,6 +8,7 @@ const routes = {
   liquidityPosition: '/liquidity-position',
   farms: '/farms',
   createNft: '/create-nft',
+  createToken: "/create-token",
   nftDetails: '/nft-details',
   search: '/search',
   notification: '/notifications',

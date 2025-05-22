@@ -29,25 +29,25 @@ export const defaultMenuItems = [
     href: routes.tradingBot,
   },
   {
-    name: 'NFTs',
+    name: 'ERC20',
     icon: <CompassIcon />,
     href: routes.search,
     dropdownItems: [
       {
-        name: 'Explore NFTs',
+        name: 'Create Token',
         icon: <CompassIcon />,
-        href: routes.search,
+        href: routes.createToken,
       },
-      {
-        name: 'Create NFT',
-        icon: <PlusCircle />,
-        href: routes.createNft,
-      },
-      {
-        name: 'NFT Details',
-        icon: <DiskIcon />,
-        href: routes.nftDetails,
-      },
+      // {
+      //   name: 'Create NFT',
+      //   icon: <PlusCircle />,
+      //   href: routes.createNft,
+      // },
+      // {
+      //   name: 'NFT Details',
+      //   icon: <DiskIcon />,
+      //   href: routes.nftDetails,
+      // },
     ],
   },
   {
