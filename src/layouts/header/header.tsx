@@ -1,3 +1,4 @@
+// components/layout/header.tsx
 'use client';
 
 import { useRouter } from 'next/navigation';
@@ -13,7 +14,7 @@ import { useDrawer } from '@/components/drawer-views/context';
 import routes from '@/config/routes';
 import { useLayout } from '@/lib/hooks/use-layout';
 import { LAYOUT_OPTIONS } from '@/lib/constants';
-import WalletConnect from '@/components/nft/wallet-connect';
+import { useMetaMask } from '@/hooks/useMetaMask'; // Import our custom hook
 
 function NotificationButton() {
   const { layout } = useLayout();
@@ -36,14 +37,39 @@ function NotificationButton() {
   );
 }
 
+function WalletConnectButton() {
+  const { isConnected, account, connect, disconnect, isLoading } = useMetaMask();
+
+  if (isLoading) {
+    return (
+      <button className="flex h-10 items-center justify-center rounded-lg bg-gray-100 px-4 text-sm font-medium text-gray-900 transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 sm:h-12 sm:px-6">
+        Loading...
+      </button>
+    );
+  }
+
+  return (
+    <button
+      onClick={isConnected ? disconnect : connect}
+      className="flex h-10 items-center justify-center rounded-lg bg-gray-100 px-4 text-sm font-medium text-gray-900 transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 sm:h-12 sm:px-6"
+    >
+      {isConnected
+        ? `${account?.slice(0, 6)}...${account?.slice(-4)}`
+        : 'Connect Wallet'}
+    </button>
+  );
+}
+
 function HeaderRightArea() {
   return (
     <div className="relative order-last flex shrink-0 items-center gap-4 sm:gap-6 lg:gap-8">
       <NotificationButton />
-      <WalletConnect />
+      <WalletConnectButton />
     </div>
   );
 }
+
+// ... rest of your header components remain the same ...
 
 export function RetroHeader({ className }: { className?: string }) {
   const router = useRouter();

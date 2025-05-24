@@ -11,6 +11,8 @@ import ToggleBar from '@/components/ui/toggle-bar';
 import { ChevronDown } from '@/components/icons/chevron-down';
 import { Ethereum } from '@/components/icons/ethereum';
 import cn from '@/utils/cn';
+import { useTokenFactory } from '@/hooks/useTokenFactory';
+import { useMetaMask } from '@/hooks/useMetaMask';
 
 const EVMNetworks = [
   {
@@ -37,12 +39,50 @@ const TokenStandards = [
 ];
 
 export default function CreateTokenRetro() {
+  const { isConnected, account, connect } = useMetaMask();
+  const { createToken, isLoading, error: tokenFactoryError } = useTokenFactory();
   const [network, setNetwork] = useState(EVMNetworks[0]);
   const [tokenStandard, setTokenStandard] = useState(TokenStandards[0]);
   const [mintable, setMintable] = useState(false);
   const [burnable, setBurnable] = useState(false);
   const [pausable, setPausable] = useState(false);
   const [permit, setPermit] = useState(false);
+  const [tokenName, setTokenName] = useState('');
+  const [tokenSymbol, setTokenSymbol] = useState('');
+  const [initialSupply, setInitialSupply] = useState('1000000');
+  const [formError, setFormError] = useState('');
+
+  const handleDeployToken = async () => {
+    console.log("in deploy",isConnected)
+    if (!isConnected) {
+      await connect();
+      return;
+    }
+
+    if (!tokenName || !tokenSymbol || !initialSupply) {
+      setFormError('Please fill all required fields');
+      return;
+    }
+
+    try {
+      setFormError('');
+      const supply = parseFloat(initialSupply);
+      if (isNaN(supply) || supply <= 0) {
+        setFormError('Initial supply must be a positive number');
+        return;
+      }
+      console.log("beefore create")
+      await createToken(tokenName, tokenSymbol, supply);
+      
+      // Reset form after successful creation
+      setTokenName('');
+      setTokenSymbol('');
+      setInitialSupply('1000000');
+    } catch (err) {
+      console.error('Error deploying token:', err);
+      setFormError('Failed to deploy token');
+    }
+  };
 
   return (
     <>
@@ -51,17 +91,34 @@ export default function CreateTokenRetro() {
           Create New ERC20 Token
         </h2>
 
+        {(formError || tokenFactoryError) && (
+          <div className="my-4 rounded-lg bg-red-100 p-3 text-red-700 dark:bg-red-900 dark:text-red-100">
+            {formError || tokenFactoryError}
+          </div>
+        )}
+
         <div className="mb-8 mt-6 grid grid-cols-1 gap-12 sm:mt-10">
           {/* Token Name */}
           <div className="mb-8">
             <InputLabel title="Token Name" important />
-            <Input type="text" placeholder="My Token" />
+            <Input 
+              type="text" 
+              placeholder="My Token" 
+              value={tokenName}
+              onChange={(e) => setTokenName(e.target.value)}
+            />
           </div>
 
           {/* Token Symbol */}
           <div className="mb-8">
             <InputLabel title="Token Symbol" important />
-            <Input type="text" placeholder="MTK" maxLength={10} />
+            <Input 
+              type="text" 
+              placeholder="MTK" 
+              maxLength={10}
+              value={tokenSymbol}
+              onChange={(e) => setTokenSymbol(e.target.value)}
+            />
           </div>
 
           {/* Initial Supply */}
@@ -75,26 +132,29 @@ export default function CreateTokenRetro() {
               min={0}
               type="number"
               placeholder="1000000"
+              value={initialSupply}
+              onChange={(e) => setInitialSupply(e.target.value)}
               inputClassName="spin-button-hidden"
             />
           </div>
 
-          {/* Decimals */}
+          {/* Decimals - Display only since the hook uses fixed decimals */}
           <div className="mb-8">
             <InputLabel
               title="Decimals"
-              subTitle="Number of decimal places (typically 18 for most tokens)"
+              subTitle="Number of decimal places (fixed to 18 in this implementation)"
             />
             <Input
               min={0}
               max={18}
               type="number"
-              defaultValue={18}
+              value={18}
+              disabled
               inputClassName="spin-button-hidden"
             />
           </div>
 
-          {/* Token Standard */}
+          {/* Token Standard - Display only since the hook uses fixed standard */}
           <div className="mb-8">
             <InputLabel title="Token Standard" />
             <div className="relative">
@@ -137,42 +197,7 @@ export default function CreateTokenRetro() {
             </div>
           </div>
 
-          {/* Advanced Features */}
-          <div className="mb-8">
-            <InputLabel title="Advanced Features" />
-            
-            <div className="space-y-4 rounded-lg border border-gray-200 p-4 dark:border-gray-700">
-              <ToggleBar
-                title="Mintable"
-                subTitle="Allow the owner to mint additional tokens after deployment"
-                checked={mintable}
-                onChange={() => setMintable(!mintable)}
-              />
-              
-              <ToggleBar
-                title="Burnable"
-                subTitle="Allow token holders to burn their tokens"
-                checked={burnable}
-                onChange={() => setBurnable(!burnable)}
-              />
-              
-              <ToggleBar
-                title="Pausable"
-                subTitle="Allow the owner to pause all token transfers"
-                checked={pausable}
-                onChange={() => setPausable(!pausable)}
-              />
-              
-              <ToggleBar
-                title="Permit (EIP-2612)"
-                subTitle="Enable gasless approvals via signatures"
-                checked={permit}
-                onChange={() => setPermit(!permit)}
-              />
-            </div>
-          </div>
-
-          {/* Network Selection */}
+          {/* Network Selection - Display only since the hook uses fixed network */}
           <div className="mb-8">
             <InputLabel title="Deploy Network" important />
             <div className="relative">
@@ -224,9 +249,28 @@ export default function CreateTokenRetro() {
           </div>
         </div>
 
-        <Button shape="rounded" size="large" className="w-full sm:w-auto">
-          DEPLOY TOKEN
+        <Button
+          shape="rounded"
+          size="large"
+          className="w-full sm:w-auto"
+          onClick={handleDeployToken}
+          isLoading={isLoading}
+          disabled={isLoading}
+        >
+          {isLoading ? 'DEPLOYING...' : 'DEPLOY TOKEN'}
         </Button>
+
+        {!isConnected && (
+          <div className="mt-4 text-sm text-gray-500 dark:text-gray-400">
+            You'll be prompted to connect your wallet when you click Deploy
+          </div>
+        )}
+
+        {isConnected && (
+          <div className="mt-4 text-sm text-gray-500 dark:text-gray-400">
+            Connected as: {account?.slice(0, 6)}...{account?.slice(-4)}
+          </div>
+        )}
       </div>
     </>
   );
