@@ -50,6 +50,7 @@ export default function RootLayout({
         />
       </head>
       <body suppressHydrationWarning>
+        <WalletProvider>
         <MetaMaskProvider>
         <TokenFactoryProvider>
           <QueryProvider>
@@ -65,6 +66,7 @@ export default function RootLayout({
           </QueryProvider>
           </TokenFactoryProvider>
         </MetaMaskProvider>
+        </WalletProvider>
       </body>
     </html>
   );
