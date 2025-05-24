@@ -6,7 +6,7 @@ import { ethers } from 'ethers';
 import { useMetaMask } from './useMetaMask';
 
 // Import your TokenFactory ABI
-import TokenFactoryABI from '../../artifacts/contracts/TokenFactory.sol/TokenFactory.json';
+import TokenFactoryABI from '../../contracts/abi/TokenFactory.json';
 
 type TokenFactoryContextType = {
   createToken: (
