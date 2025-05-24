@@ -9,6 +9,10 @@ import ModalsContainer from '@/components/modal-views/container';
 import DrawersContainer from '@/components/drawer-views/container';
 import SettingsButton from '@/components/settings/settings-button';
 import SettingsDrawer from '@/components/settings/settings-drawer';
+import {MetaMaskProvider} from "@/hooks/useMetaMask";
+import { TokenFactoryProvider } from '@/hooks/useTokenFactory';
+
+
 // base css file
 import 'overlayscrollbars/overlayscrollbars.css';
 import 'swiper/css';
@@ -47,6 +51,8 @@ export default function RootLayout({
       </head>
       <body suppressHydrationWarning>
         <WalletProvider>
+        <MetaMaskProvider>
+        <TokenFactoryProvider>
           <QueryProvider>
             <ThemeProvider>
               <SettingsButton />
@@ -58,6 +64,8 @@ export default function RootLayout({
               {children}
             </ThemeProvider>
           </QueryProvider>
+          </TokenFactoryProvider>
+        </MetaMaskProvider>
         </WalletProvider>
       </body>
     </html>
