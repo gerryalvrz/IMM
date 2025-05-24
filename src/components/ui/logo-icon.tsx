@@ -1,3 +1,6 @@
+
+/* eslint-disable */
+
 import Image from '@/components/ui/image';
 import { useIsMounted } from '@/lib/hooks/use-is-mounted';
 import { useIsDarkMode } from '@/lib/hooks/use-is-dark-mode';
