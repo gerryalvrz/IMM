@@ -38,11 +38,11 @@ export const defaultMenuItems = [
         icon: <CompassIcon />,
         href: routes.createToken,
       },
-      // {
-      //   name: 'Create NFT',
-      //   icon: <PlusCircle />,
-      //   href: routes.createNft,
-      // },
+      {
+        name: 'Listed Tokens',
+        icon: <PlusCircle />,
+        href: routes.listedToken,
+      },
       // {
       //   name: 'NFT Details',
       //   icon: <DiskIcon />,

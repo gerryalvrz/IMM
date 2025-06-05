@@ -42,7 +42,7 @@ const TokenStandards = [
 
 export default function CreateTokenRetro() {
   const { isConnected, account, connect } = useMetaMask();
-  const { createToken, isLoading, error: tokenFactoryError } = useTokenFactory();
+  const { createTokenWithLiquidity, isLoading, error: tokenFactoryError } = useTokenFactory();
   const [network, setNetwork] = useState(EVMNetworks[0]);
   const [tokenStandard, setTokenStandard] = useState(TokenStandards[0]);
   const [mintable, setMintable] = useState(false);
@@ -52,6 +52,7 @@ export default function CreateTokenRetro() {
   const [tokenName, setTokenName] = useState('');
   const [tokenSymbol, setTokenSymbol] = useState('');
   const [initialSupply, setInitialSupply] = useState('1000000');
+  const [intialBuy,setInitialBuy] = useState("100");
   const [formError, setFormError] = useState('');
 
   const handleDeployToken = async () => {
@@ -74,7 +75,7 @@ export default function CreateTokenRetro() {
         return;
       }
       console.log("beefore create")
-      await createToken(tokenName, tokenSymbol, supply);
+      await createTokenWithLiquidity(tokenName, tokenSymbol, supply,Number("0.1"));
       
       // Reset form after successful creation
       setTokenName('');
@@ -136,6 +137,23 @@ export default function CreateTokenRetro() {
               placeholder="1000000"
               value={initialSupply}
               onChange={(e) => setInitialSupply(e.target.value)}
+              inputClassName="spin-button-hidden"
+            />
+          </div>
+
+              {/* Initial Supply */}
+              <div className="mb-8">
+            <InputLabel
+              title="Initial Supply"
+              important
+              subTitle="The initial number of tokens to mint"
+            />
+            <Input
+              min={0}
+              type="number"
+              placeholder="1000000"
+              value={intialBuy}
+              onChange={(e) => setInitialBuy(e.target.value)}
               inputClassName="spin-button-hidden"
             />
           </div>

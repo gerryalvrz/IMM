@@ -9,6 +9,7 @@ const routes = {
   farms: '/farms',
   createNft: '/create-nft',
   createToken: "/create-token",
+  listedToken:'/listed-tokens',
   nftDetails: '/nft-details',
   search: '/search',
   notification: '/notifications',
