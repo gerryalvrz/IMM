@@ -50,7 +50,7 @@ export default function RootLayout({
         />
       </head>
       <body suppressHydrationWarning>
-        <WalletProvider>
+<WalletProvider>
         <MetaMaskProvider>
         <TokenFactoryProvider>
           <QueryProvider>
