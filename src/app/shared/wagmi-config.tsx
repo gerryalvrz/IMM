@@ -1,4 +1,4 @@
-import { mainnet, sepolia } from 'wagmi/chains';
+import { mainnet, sepolia,celo,celoAlfajores } from 'wagmi/chains';
 import { cookieStorage, createStorage } from 'wagmi';
 import { defaultWagmiConfig } from '@web3modal/wagmi/react/config';
 
@@ -11,7 +11,7 @@ const metadata = {
   icons: ['https://avatars.githubusercontent.com/u/37784886'],
 };
 
-const chains = [mainnet, sepolia] as const;
+const chains = [mainnet, sepolia,celo,celoAlfajores] as const;
 export const config = defaultWagmiConfig({
   chains,
   projectId: projectId || '',
