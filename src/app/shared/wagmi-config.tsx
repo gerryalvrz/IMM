@@ -3,6 +3,7 @@ import { cookieStorage, createStorage } from 'wagmi';
 import { defaultWagmiConfig } from '@web3modal/wagmi/react/config';
 
 export const projectId = process.env.NEXT_PUBLIC_CRYPTO_PROJECT_ID;
+console.log("projectid",projectId)
 
 const metadata = {
   name: 'Web3Modal',
