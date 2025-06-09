@@ -53,6 +53,7 @@ export const TokenFactoryProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     if (provider && isConnected) {
       const signer = provider.getSigner();
+      console.log("get singer",signer)
       const contract = new ethers.Contract(
         TOKEN_FACTORY_ADDRESS,
         TokenFactoryABI.abi,
