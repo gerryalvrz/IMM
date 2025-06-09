@@ -69,7 +69,7 @@ export const TokenFactoryProvider = ({ children }: { children: ReactNode }) => {
     try {
       setIsLoading(true);
       setError(null);
-      
+      console.log("contract",contract)
       const tokenAddresses = await contract.getAllTokens();
       const tokensWithPoolsData = [];
       
