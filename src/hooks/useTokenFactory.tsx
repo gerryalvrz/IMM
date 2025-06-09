@@ -51,6 +51,7 @@ export const TokenFactoryProvider = ({ children }: { children: ReactNode }) => {
   const [factoryContract, setFactoryContract] = useState<ethers.Contract | null>(null);
 
   useEffect(() => {
+    console.log("is connected",isConnected," provier ",provider)
     if (provider && isConnected) {
       const signer = provider.getSigner();
       console.log("get singer",signer)
