@@ -39,7 +39,8 @@ type BondingCurveContextType = TokenFactoryContextType & {
 const TokenFactoryContext = createContext<TokenFactoryContextType | undefined>(undefined);
 const BondingCurveContext = createContext<BondingCurveContextType | undefined>(undefined);
 
-const TOKEN_FACTORY_ADDRESS = "0x1e341B712AF9C6Bd7dcf1CA8F6DB7934D344F6dc";
+const TOKEN_FACTORY_ADDRESS = "0x65a87eAb4723E3c6AFae730df3d342F8bfb685aD"
+//"0x1e341B712AF9C6Bd7dcf1CA8F6DB7934D344F6dc";
 
 export const TokenFactoryProvider = ({ children }: { children: ReactNode }) => {
   const { isConnected, account, provider } = useMetaMask();
@@ -185,7 +186,11 @@ export const TokenFactoryProvider = ({ children }: { children: ReactNode }) => {
       if (!poolContract) throw new Error('Pool contract not initialized');
       
       const parsedEth = ethers.utils.parseEther(ethAmount.toString());
-      const tx = await poolContract.buy({ value: parsedEth });
+
+      const tokenAmount = await poolContract.calculatePurchaseReturn(parsedEth);
+      const parsedTokenAmount = ethers.utils.formatEther(tokenAmount)
+      console.log("token amount",parsedTokenAmount)
+      const tx = await poolContract.buy({ value: parsedEth, gasLimit:300000 });
       await tx.wait();
       
       return true;

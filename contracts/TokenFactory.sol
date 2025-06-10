@@ -88,7 +88,7 @@ contract TokenFactory {
         require(success, 'ETH transfer failed');
 
         // Transfer tokens from factory to creator
-        token.transfer(msg.sender, initialSupply);
+        token.transfer(address(pool), initialSupply);
 
         // Refund any excess ETH
         if (msg.value > initialLiquidityETH) {
