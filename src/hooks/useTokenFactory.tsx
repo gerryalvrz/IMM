@@ -39,7 +39,7 @@ type BondingCurveContextType = TokenFactoryContextType & {
 const TokenFactoryContext = createContext<TokenFactoryContextType | undefined>(undefined);
 const BondingCurveContext = createContext<BondingCurveContextType | undefined>(undefined);
 
-const TOKEN_FACTORY_ADDRESS = "0x65a87eAb4723E3c6AFae730df3d342F8bfb685aD"
+const TOKEN_FACTORY_ADDRESS = "0x93cB96115Ab14aA41879F0Dc85C1aCe96bB9B7D4"
 //"0x1e341B712AF9C6Bd7dcf1CA8F6DB7934D344F6dc";
 
 export const TokenFactoryProvider = ({ children }: { children: ReactNode }) => {
@@ -211,6 +211,7 @@ export const TokenFactoryProvider = ({ children }: { children: ReactNode }) => {
       setError(null);
       
       const poolContract = getPoolContract();
+      console.log("pool contract",poolContract)
       if (!poolContract) throw new Error('Pool contract not initialized');
       
       // First approve the pool to spend tokens
@@ -221,10 +222,11 @@ export const TokenFactoryProvider = ({ children }: { children: ReactNode }) => {
       );
       
       const parsedAmount = ethers.utils.parseUnits(tokenAmount.toString(), 18);
+      console.log("token amount",parsedAmount)
       await tokenContract.approve(poolContract.address, parsedAmount);
       
       // Then sell the tokens
-      const tx = await poolContract.sell(parsedAmount);
+      const tx = await poolContract.sell(parsedAmount,{gasLimit:500000});
       await tx.wait();
       
       return true;

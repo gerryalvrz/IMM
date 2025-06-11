@@ -94,7 +94,7 @@ contract BondingCurvePool is ReentrancyGuard {
         tokenSupply -= tokenAmount;
         
         // Transfer ETH to seller
-        (bool success, ) = msg.sender.call{value: ethAmount}("");
+        (bool success, ) = address(this).call{value: ethAmount}("");
         require(success, "ETH transfer failed");
         
         // Transfer tokens from seller to pool
