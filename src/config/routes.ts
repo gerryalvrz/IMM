@@ -10,6 +10,7 @@ const routes = {
   createNft: '/create-nft',
   createToken: "/create-token",
   listedToken:'/listed-tokens',
+  vesting: '/vesting',
   nftDetails: '/nft-details',
   search: '/search',
   notification: '/notifications',

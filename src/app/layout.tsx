@@ -11,6 +11,7 @@ import SettingsButton from '@/components/settings/settings-button';
 import SettingsDrawer from '@/components/settings/settings-drawer';
 import {MetaMaskProvider} from "@/hooks/useMetaMask";
 import { TokenFactoryProvider } from '@/hooks/useTokenFactory';
+import { VestingProvider } from '@/hooks/useVesting';
 
 
 // base css file
@@ -53,6 +54,7 @@ export default function RootLayout({
 <WalletProvider>
         <MetaMaskProvider>
         <TokenFactoryProvider>
+        <VestingProvider>
           <QueryProvider>
             <ThemeProvider>
               <SettingsButton />
@@ -64,7 +66,8 @@ export default function RootLayout({
               {children}
             </ThemeProvider>
           </QueryProvider>
-          </TokenFactoryProvider>
+        </VestingProvider>
+        </TokenFactoryProvider>
         </MetaMaskProvider>
         </WalletProvider>
       </body>

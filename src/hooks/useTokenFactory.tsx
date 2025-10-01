@@ -39,8 +39,9 @@ type BondingCurveContextType = TokenFactoryContextType & {
 const TokenFactoryContext = createContext<TokenFactoryContextType | undefined>(undefined);
 const BondingCurveContext = createContext<BondingCurveContextType | undefined>(undefined);
 
-const TOKEN_FACTORY_ADDRESS = "0x93cB96115Ab14aA41879F0Dc85C1aCe96bB9B7D4"
-//"0x1e341B712AF9C6Bd7dcf1CA8F6DB7934D344F6dc";
+// NEW DEPLOYMENT with Vesting - January 23, 2025
+const TOKEN_FACTORY_ADDRESS = "0xb64Ef5a4aB2Fe8D8d655DA5658b8305414883a92";
+// Previous deployment (without vesting): "0x93cB96115Ab14aA41879F0Dc85C1aCe96bB9B7D4"
 
 export const TokenFactoryProvider = ({ children }: { children: ReactNode }) => {
   const { isConnected, account, provider } = useMetaMask();
