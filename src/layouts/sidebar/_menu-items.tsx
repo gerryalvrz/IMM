@@ -11,6 +11,7 @@ import { CompassIcon } from '@/components/icons/compass';
 import { LivePricing } from '@/components/icons/live-pricing';
 import { LockIcon } from '@/components/icons/lock-icon';
 import { TradingBotIcon } from '@/components/icons/trading-bot-icon';
+import { SandClock } from '@/components/icons/sand-clock';
 
 export const defaultMenuItems = [
   {
@@ -43,11 +44,11 @@ export const defaultMenuItems = [
         icon: <PlusCircle />,
         href: routes.listedToken,
       },
-      // {
-      //   name: 'NFT Details',
-      //   icon: <DiskIcon />,
-      //   href: routes.nftDetails,
-      // },
+      {
+        name: 'My Vesting',
+        icon: <SandClock />,
+        href: routes.vesting,
+      },
     ],
   },
   {

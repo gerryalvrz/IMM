@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import routes from '@/config/routes';
 import Image from '@/components/ui/image';
-// static data
+// static datas
 import votePool from '@/assets/images/vote-pool.svg';
 import discord from '@/assets/images/discord.svg';
 import forum from '@/assets/images/forum.svg';

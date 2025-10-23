@@ -61,8 +61,9 @@ import React, {
           const accounts = await window.ethereum.request({
             method: 'eth_accounts',
           });
-  
+          console.log("accounts length",accounts.length)
           if (accounts.length > 0) {
+            console.log("connecting?")
             setAccount(accounts[0]);
             setIsConnected(true);
           }
